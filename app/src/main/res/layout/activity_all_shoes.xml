@@ -54,10 +54,11 @@
                 app:srcCompat="@drawable/air2" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orangeColor"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 
@@ -71,10 +72,11 @@
 
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orangeColor"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 
@@ -88,10 +90,11 @@
 
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orangeColor"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 
@@ -104,10 +107,11 @@
                 app:srcCompat="@drawable/air4" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orangeColor"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 
@@ -120,10 +124,11 @@
                 app:srcCompat="@drawable/air5" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/orangeColor"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 
@@ -136,10 +141,11 @@
                 app:srcCompat="@drawable/air6" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#F9A825"
+                android:onClick="onClick"
                 android:text="@string/reviewButton"
                 android:textColor="#FFFFFF" />
 

@@ -10,38 +10,34 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LogIn extends AppCompatActivity {
-    DBHelper DB;
-    EditText username, Password;
-    Button LogIn;
+    EditText email , password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        username = (EditText) findViewById(R.id.UserName);
-        Password = (EditText) findViewById(R.id.PassWord);
-        DB = new DBHelper(this);
+        email = findViewById(R.id.editTextTextEmailAddress);
+        password = findViewById(R.id.editTextTextPassword2);
+
+
     }
-    public void onClick(View view){
+    public void onClick(View view) {
         String btn_txt;
-        String user = username.getText().toString();
-        String pass=Password.getText().toString();
         btn_txt = ((Button) view).getText().toString();
-        if(user.equals("") || pass.equals(""))
-            Toast.makeText(LogIn.this, "please enter your information", Toast.LENGTH_SHORT).show();
-        else{
-            Boolean checkuserpass=DB.checkusernamepassword(user,pass);
-            if (checkuserpass==true){
-                if (btn_txt.equals("LogIn"))
-                {
-                    Intent allShoes=new Intent(this, allShoes.class);
-                    startActivity(allShoes);
+        if (btn_txt.equals("LogIn")) {
+            if(email.getText().toString().trim().isEmpty() || password.getText().toString().trim().isEmpty()) {
+                Toast.makeText(LogIn.this, " please inter your data ", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                if(email.getText().toString().trim().equals(getIntent().getStringExtra("email")) && password.getText().toString().trim().equals(getIntent().getStringExtra("password"))) {
+                    Intent allshoes = new Intent(this, allShoes.class);
+                    startActivity(allshoes);
+                }
+                else {
+                    Toast.makeText(LogIn.this, " invalid data pleas try again", Toast.LENGTH_SHORT).show();
+                    password.setText("");
                 }
             }
-            else{
-                Toast.makeText(LogIn.this, "invalid information", Toast.LENGTH_SHORT).show();
-            }
         }
-
     }
 }
