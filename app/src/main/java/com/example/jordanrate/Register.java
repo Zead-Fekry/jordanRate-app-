@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
+    DBHelper DB;
     EditText name , phone , email , password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +20,18 @@ public class Register extends AppCompatActivity {
         phone = findViewById(R.id.editTextPhone);
         email = findViewById(R.id.editTextTextEmailAddress2);
         password = findViewById(R.id.editTextTextPassword);
-
+        DB=new DBHelper(this);
     }
     public void onClick(View view) {
         String btn_txt;
         btn_txt = ((Button) view).getText().toString();
         if(btn_txt.equals("Register")) {
             if(name.getText().toString().trim().isEmpty() || phone.getText().toString().trim().isEmpty() || email.getText().toString().trim().isEmpty() || password.getText().toString().trim().isEmpty()){
-                Toast.makeText(Register.this, " please inter your data ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Register.this, " please Enter your data ", Toast.LENGTH_SHORT).show();
             }
             else {
                 if(passwordValidation(password.getText().toString().trim())){
+                    DB.insertData(email.getText().toString(),password.getText().toString());
                     Intent allshoes = new Intent(this, MainActivity.class);
                     allshoes.putExtra("email", email.getText().toString().trim());
                     allshoes.putExtra("password", password.getText().toString().trim());
