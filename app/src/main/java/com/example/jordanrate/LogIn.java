@@ -35,7 +35,7 @@ public class LogIn extends AppCompatActivity {
                     startActivity(allshoes);
                 }
                 else {
-                    Toast.makeText(LogIn.this, " invalid data pleas try again", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogIn.this, " invalid data please try again", Toast.LENGTH_SHORT).show();
                     password.setText("");
                 }
             }
